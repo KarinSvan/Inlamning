@@ -9,6 +9,9 @@ public class Inlamning {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter your text, type stop to finish.");
+        //class  object
+        Counter counter = new Counter();
+
         int lineCounter=0;
         boolean isReading = true;
 
@@ -20,20 +23,14 @@ public class Inlamning {
                 isReading = false;
             }
             else {
+                //Använder metoden countLinesAndChars från Counter
+                counter.countLinesAndChars(lineInput[lineCounter]);
                 lineCounter++;
             }
         }
-        //class  object
-        Counter counter = new Counter();
 
-        int index = 0;
-
-        while (index<lineCounter){
-            counter.countLinesAndChars(lineInput[index]);
-            index++;
-        }
-
-        System.out.println("Number of lines: " + counter.lines + "\nNumber of chars: " + counter.chars);
+        //Hämtar lines och counter
+        System.out.println("Number of lines: " + counter.getLines() + "\nNumber of chars: " + counter.getChars());
     }
 }
 

@@ -11,7 +11,7 @@ public class CounterTest {
         counter.countLinesAndChars("Test line");
 
         int expectedLines = 1;
-        int actualLines = counter.lines;
+        int actualLines = counter.getLines();
 
         assertEquals(expectedLines, actualLines);
     }
@@ -24,7 +24,7 @@ public class CounterTest {
         counter.countLinesAndChars("Test line3");
 
         int expectedLines = 3;
-        int actualLines = counter.lines;
+        int actualLines = counter.getLines();
 
         assertEquals(expectedLines, actualLines);
     }
@@ -35,7 +35,7 @@ public class CounterTest {
         counter.countLinesAndChars("Test chars");
 
         int expectedChars = 10;
-        int actualChars = counter.chars;
+        int actualChars = counter.getChars();
 
         assertEquals(expectedChars, actualChars);
     }
